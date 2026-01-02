@@ -11,11 +11,21 @@ function Booking() {
       </h1>
       <div className="w-full h-9/10 flex justify-center items-start relative">
         <div className="w-full grid md:flex p-5 gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-10 justify-center">
-          <Cards title="Table 1" capacity="4 people" onclick={() => handleBooking(1)} />
-          <div className="mt-6">
-            <Cards title="Table 2" capacity="6 people" onclick={() => handleBooking(2)} />
-          </div>
-          <Cards title="Table 3" capacity="8 people" onclick={() => handleBooking(3)} />
+          <Cards
+            title="Table 1"
+            capacity="2 people"
+            onclick={() => handleBooking(1)}
+          />
+          <Cards
+            title="Table 2"
+            capacity="4 people"
+            onclick={() => handleBooking(2)}
+          />
+          <Cards
+            title="Table 3"
+            capacity="8 people"
+            onclick={() => handleBooking(3)}
+          />
         </div>
       </div>
     </div>

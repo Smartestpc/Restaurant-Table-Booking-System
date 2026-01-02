@@ -1,8 +1,8 @@
 function Navbar() {
   return (
-    <div className="w-screen h-20 flex items-center justify-between p-4 shadow-md fixed top-0 left-0 z-10">
+    <div className="w-screen h-20 flex items-center justify-between p-4 bg-black shadow-md fixed top-0 left-0 z-10">
       <div className=" animate-bounce flex items-center justify-center text-blue-600 font-bold uppercase text-3xl">
-        Smart's Restaurant
+        SR
       </div>
       <div className="flex gap-6 items-center">
         <ul className="flex gap-3 text-white  font-semibold uppercase items-center">
