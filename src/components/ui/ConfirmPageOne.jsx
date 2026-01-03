@@ -3,7 +3,7 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { pagecontext } from "./hooks/BookingModalPage";
 
 function ConfirmPageOne() {
-  const { handleBooking } = useContext(pagecontext);
+  const { handleBooking, handleChange, details } = useContext(pagecontext);
   return (
     <div className="book z-30 shadow-lg">
       <div className="w-full h-20 flex items-center justify-between border-b-2 border-gray-300 relative top-0 ">
@@ -24,24 +24,30 @@ function ConfirmPageOne() {
             <div>
               <label htmlFor="name">First Name:</label>
               <input
+                onChange={handleChange}
                 type="text"
-                id="name"
+                value={details.fname}
+                name="fname"
                 className="w-full p-2 border border-gray-300 rounded"
-              />
+                />
             </div>
             <div>
               <label htmlFor="name">Last Name:</label>
               <input
+                onChange={handleChange}
+                value={details.lname}
                 type="text"
-                id="name"
+                name="lname"
                 className="w-full p-2 border border-gray-300 rounded"
               />
             </div>
             <div>
               <label htmlFor="email">Email:</label>
               <input
+                onChange={handleChange}
+                value={details.email}
                 type="email"
-                id="email"
+                name="email"
                 className="w-full p-2 border border-gray-300 rounded"
               />
             </div>
@@ -49,24 +55,30 @@ function ConfirmPageOne() {
             <div>
               <label htmlFor="phone">Phone:</label>
               <input
+                onChange={handleChange}
+                value={details.phone}
                 type="tel"
-                id="phone"
+                name="phone"
                 className="w-full p-2 border border-gray-300 rounded"
               />
             </div>
             <div>
-              <label htmlFor="date">Phone:</label>
+              <label htmlFor="date">Date:</label>
               <input
+                onChange={handleChange}
+                value={details.date}
                 type="date"
-                id="date"
+                name="date"
                 className="w-full p-2 border border-gray-300 rounded"
               />
             </div>
             <div>
-              <label htmlFor="date">Number of Guests:</label>
+              <label htmlFor="guests">Number of Guests:</label>
               <input
+                onChange={handleChange}
+                value={details.guests}
                 type="number"
-                id="number"
+                name="guests"
                 max={2}
                 min={1}
                 className="w-full p-2 border border-gray-300 rounded"
@@ -75,7 +87,7 @@ function ConfirmPageOne() {
           </div>
         </form>
         <div>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" onClick={() => handleBooking(4)}>
             Confirm Booking
           </button>
         </div>

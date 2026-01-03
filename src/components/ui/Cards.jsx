@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Cards({ title, capacity, onclick }) {
+function Cards({ title, capacity, onclick, img }) {
   return (
     <div className='bg-white shadow-lg w-full rounded-lg sm:w-75 h-90 shadow-gray-900'>
-        <div className="w-full h-1/2 bg-gray-200 rounded-t-lg"></div>
+        <div className="w-full h-1/2 bg-gray-200 rounded-t-lg overflow-hidden"><img src={img} alt="restaurant image" /></div>
         <div className="p-4">
             <h3 className="text-lg font-semibold">{title}</h3>
             <p className="text-gray-600">Capacity: {capacity}</p>

@@ -12,16 +12,19 @@ function Booking() {
       <div className="w-full h-9/10 flex justify-center items-start relative">
         <div className="w-full grid md:flex p-5 gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pt-10 justify-center">
           <Cards
+            img="img3.jpg"
             title="Table 1"
             capacity="2 people"
             onclick={() => handleBooking(1)}
           />
           <Cards
+            img="img4.jpg"
             title="Table 2"
             capacity="4 people"
             onclick={() => handleBooking(2)}
           />
           <Cards
+            img="img5.jpg"
             title="Table 3"
             capacity="8 people"
             onclick={() => handleBooking(3)}

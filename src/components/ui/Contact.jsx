@@ -1,7 +1,24 @@
-import React from "react";
+import { useState } from "react";
 import ContactAnalise from "./ContactAnalise";
 
 function Contact() {
+  const [details, setDetails] = useState({
+    fname: "",
+    lname: "",
+    email: "",
+    phone: "",
+    date: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setDetails({
+      ...details,
+      [name]: value
+    });
+  };
+
   return (
     <div id="contact" className="w-full h-screen bg-white scroll-mt-20">
       <div className="p-4">
@@ -11,9 +28,9 @@ function Contact() {
       <div className="w-full h-3/4 flex gap-4 justify-center items-center p-4">
         <div className="h-full w-1/2 bg-gray-200 ronded-t-lg flex flex-col justify-between p-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:flex  items-center justify-evenly  p-2">
-            <ContactAnalise ContactAnalise={247} ContactAdd={"Support"} />
-            <ContactAnalise ContactAnalise={500} ContactAdd={"Clients"} />
-            <ContactAnalise ContactAnalise={8000} ContactAdd={"Dishes"} />
+            <ContactAnalise ContactAnalise={"24/7"} ContactAdd={"Support"} />
+            <ContactAnalise ContactAnalise={"500+"} ContactAdd={"Clients"} />
+            <ContactAnalise ContactAnalise={"8000+"} ContactAdd={"Dishes"} />
           </div>
           <div className="w-full flex flex-col justify-center items-start p-4 shadow-gray-900">
             <h2 className="text-3xl font-bold">Our Contact Info</h2>
@@ -26,11 +43,22 @@ function Contact() {
           <div className="p-4 flex flex-col gap-4 w-full">
             <h1 className="text-2xl font-bold">Get In Touch</h1>
             <input
+              onChange={handleChange}
+              name="fname"
               type="text"
-              placeholder="Your Name"
+              placeholder="Your First Name"
               className="w-full p-2 border border-gray-300 rounded"
             />
             <input
+              onChange={handleChange}
+              name="lname"
+              type="text"
+              placeholder="Your Last Name"
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+            <input
+              onChange={handleChange}
+              name="email"
               type="email"
               placeholder="Your Email"
               className="w-full p-2 border border-gray-300 rounded"
